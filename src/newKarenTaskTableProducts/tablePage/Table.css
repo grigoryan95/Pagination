@@ -1,0 +1,23 @@
+.newTable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 50px auto 0;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#myInput {
+    background-image: url('bootstrap-icons/icons/search.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    border: 1px solid #ddd;
+    padding: 10px;
+}

@@ -1,0 +1,16 @@
+.tableComponent {
+  table-layout: fixed;
+  width: 75% !important;
+}
+
+.tableComponent td {
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.tablePagination {
+  width: 50%;
+  margin: 0 auto;
+  color: #288af1;
+  text-align: center;
+}

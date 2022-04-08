@@ -1,23 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 
-const Button = (props) => {
-
-    const size = `btn-${props.size}`;
-    const disabled = props.disabled && 'btn-disabled';
-    const color = `btn-${props.type?props.type + '-' + props.color:props.color}`;
+const Button = ({
+    action = null,
+    type = 'submit',
+    name = 'Enter Your Text',
+    size = 'lg',
+    color = 'primary',
+    disabled = false,
+    children = '',
+    margin = '',
+    display = '',
+    navLink = ''
+}) => {
 
     return (
-        <div>
-            <button
-                onClick={props.action}
-                type="submit"
-                disabled={props.disabled && props.disabled}
-                className={`btn ${color} ${size} ${disabled}`}
-            >
-                {props.children ? props.children : props.name}
-            </button>
-        </div>
+        <button
+            onClick={action}
+            type={type}
+            disabled={disabled && disabled}
+            className={`btn btn-${size} btn-${type ? type + '-' + color : color} ${size} d-${display} m-${margin} cancel`}
+        >
+                <Link className="text-decoration-none" to={navLink}>{children ? children : name}</Link>
+        </button>
     );
+};
+
+Button.propTypes = {
+    name: PropTypes.string.isRequired,
+    action: PropTypes.func,
+    type: PropTypes.string,
+    size: PropTypes.string,
+    color: PropTypes.string,
+    disabled: PropTypes.bool,
+    children: PropTypes.string,
+    data: PropTypes.array,
+    navLink: PropTypes.string,
 };
 
 export default Button;

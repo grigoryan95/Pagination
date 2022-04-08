@@ -1,0 +1,67 @@
+$ocean-blue: #288af1 !default;
+$light-green: #0dfd78 !default;
+
+// Checkbox element in table cell
+.with-check {
+    text-align: center;
+}
+
+// Checkbox element global styles
+.custom-checkbox {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+
+    span {
+        color: $ocean-blue;
+    }
+
+    .checkmark {
+        width: 24px;
+        height: 24px;
+        border-radius: 2px;
+        position: relative;
+        transition: all 0.3s;
+        display: inline-block;
+        background-color: #eee;
+        border: 1px solid transparent;
+
+        &::before {
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            margin: auto;
+            display: none;
+            font-size: 20px;
+            content: "\f272";
+            position: absolute;
+            transition: all 0.3s;
+            transform: translate(-50%, -50%);
+            font-family: $bootstrap-icons-font;
+        }
+    }
+
+    // Check Events
+    input {
+        display: none;
+
+        &:checked + .checkmark {
+            &::before {
+                display: block;
+            }
+
+            &:not(.color-green) {
+                background-color: $ocean-blue;
+            }
+
+            &.color-green {
+                background-color: $light-green;
+            }
+        }
+    }
+
+    &:hover input + .checkmark {
+        border-color: $ocean-blue;
+    }
+}

@@ -1,6 +1,9 @@
 .required {
     color: red;
 }
-i{
-    float: right;
+i {
+    display: inline-block;
+    width: 10%;
+    cursor: pointer;
+    font-weight: bolder !important;
 }
